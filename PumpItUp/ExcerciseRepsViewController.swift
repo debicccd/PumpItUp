@@ -8,6 +8,7 @@
 
 import UIKit
 import AudioToolbox
+import AVFoundation
 
 class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -102,6 +103,7 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
             if self.targetReps[i] > self.completedReps[i]{
                 return
             } else if self.targetReps[i] == self.completedReps[i]{
+                playSound()
                 displayBreakDialog(i)
                 return
             }
@@ -123,13 +125,15 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
         alertController.addAction(defaultAction)
         
         presentViewController(alertController, animated: true, completion: nil)
-        
-        playSound()
     }
     
     func playSound(){
-        println("SOUND")
-        AudioServicesPlaySystemSound(1103)
+        var soundID: SystemSoundID = 0
+        var mainBundle: CFBundleRef = CFBundleGetMainBundle()
+        if let ref: CFURLRef = CFBundleCopyResourceURL(mainBundle, "beep-03", "wav", nil) {
+            AudioServicesCreateSystemSoundID(ref, &soundID)
+            AudioServicesPlaySystemSound(soundID)
+        }
     }
     
     @IBAction func pressedResetButton(sender: AnyObject) {
