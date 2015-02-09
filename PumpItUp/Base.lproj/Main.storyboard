@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--View Pump-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="PumpItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -16,38 +17,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="221" y="279" width="157.5" height="41.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pump.GIF" translatesAutoresizingMaskIntoConstraints="NO" id="qmb-sR-IEK">
+                                <rect key="frame" x="267" y="211" width="66" height="178"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bh2-6t-PXt">
+                                <rect key="frame" x="279" y="397" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="203" y="329" width="194.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9a-D3-1nd">
+                                <rect key="frame" x="279" y="182" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstAttribute="centerX" secondItem="Bh2-6t-PXt" secondAttribute="centerX" id="399-ip-7d4"/>
+                            <constraint firstAttribute="centerX" secondItem="qmb-sR-IEK" secondAttribute="centerX" id="TcP-dq-DTi"/>
+                            <constraint firstItem="Bh2-6t-PXt" firstAttribute="top" secondItem="qmb-sR-IEK" secondAttribute="bottom" constant="8" id="eaW-zC-gRe"/>
+                            <constraint firstAttribute="centerX" secondItem="T9a-D3-1nd" secondAttribute="centerX" id="kFK-wO-fAI"/>
+                            <constraint firstAttribute="centerY" secondItem="qmb-sR-IEK" secondAttribute="centerY" id="sp5-mQ-JRp"/>
+                            <constraint firstItem="qmb-sR-IEK" firstAttribute="top" secondItem="T9a-D3-1nd" secondAttribute="bottom" constant="8" id="za6-de-GeI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="View Pump" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="pumpIncomeLabel" destination="Bh2-6t-PXt" id="P0b-Y3-Evs"/>
+                        <outlet property="pumpRateLabel" destination="T9a-D3-1nd" id="QqD-bq-vBZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Second-->
+        <!--Upgrades-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="PumpItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -56,29 +65,180 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="209.5" height="41.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="215.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZX8-dM-Uha">
+                                <rect key="frame" x="24" y="44" width="552" height="97"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0RV-vI-qBE">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="97"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first" translatesAutoresizingMaskIntoConstraints="NO" id="Ili-C0-AYT">
+                                                <rect key="frame" x="0.0" y="0.0" width="106" height="30"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-CJ-zRG">
+                                                <rect key="frame" x="32" y="76" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOg-9h-Pvr">
+                                                <rect key="frame" x="8" y="38" width="90" height="30"/>
+                                                <state key="normal" title="Pump Speed">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressedPumpSpeedUpgrade:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="MOT-GY-feh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.69411766529999996" green="0.92549026010000002" blue="0.93333339689999995" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="xOg-9h-Pvr" firstAttribute="leading" secondItem="0RV-vI-qBE" secondAttribute="leading" constant="8" id="6ho-mf-YeA"/>
+                                            <constraint firstAttribute="bottom" secondItem="dPd-CJ-zRG" secondAttribute="bottom" id="8fz-fC-234"/>
+                                            <constraint firstItem="Ili-C0-AYT" firstAttribute="leading" secondItem="0RV-vI-qBE" secondAttribute="leading" id="Gcl-10-PWz"/>
+                                            <constraint firstItem="dPd-CJ-zRG" firstAttribute="leading" secondItem="0RV-vI-qBE" secondAttribute="leading" id="KHz-of-41y"/>
+                                            <constraint firstAttribute="centerX" secondItem="xOg-9h-Pvr" secondAttribute="centerX" id="P9h-tb-c0g"/>
+                                            <constraint firstItem="Ili-C0-AYT" firstAttribute="top" secondItem="0RV-vI-qBE" secondAttribute="top" id="aOS-qN-NIe"/>
+                                            <constraint firstAttribute="trailing" secondItem="xOg-9h-Pvr" secondAttribute="trailing" constant="8" id="bbf-mS-hI9"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ili-C0-AYT" secondAttribute="trailing" id="dpf-sZ-q02"/>
+                                            <constraint firstItem="dPd-CJ-zRG" firstAttribute="top" secondItem="xOg-9h-Pvr" secondAttribute="bottom" constant="8" id="kO6-Nq-V8X"/>
+                                            <constraint firstAttribute="trailing" secondItem="dPd-CJ-zRG" secondAttribute="trailing" id="luL-00-gAU"/>
+                                            <constraint firstAttribute="centerX" secondItem="dPd-CJ-zRG" secondAttribute="centerX" id="qvq-jE-GtO"/>
+                                            <constraint firstItem="xOg-9h-Pvr" firstAttribute="top" secondItem="Ili-C0-AYT" secondAttribute="bottom" constant="8" id="rOv-EZ-0UV"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="P9h-tb-c0g"/>
+                                                <exclude reference="KHz-of-41y"/>
+                                                <exclude reference="luL-00-gAU"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIg-HY-OI1">
+                                        <rect key="frame" x="437" y="0.0" width="115" height="97"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first" translatesAutoresizingMaskIntoConstraints="NO" id="iAY-dd-WM7">
+                                                <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwq-zT-8dj">
+                                                <rect key="frame" x="37" y="76" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Mx-kI-d26">
+                                                <rect key="frame" x="8" y="38" width="99" height="30"/>
+                                                <state key="normal" title="Pump Storage">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.69411766529999996" green="0.92549026010000002" blue="0.93333339689999995" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="iAY-dd-WM7" firstAttribute="top" secondItem="CIg-HY-OI1" secondAttribute="top" id="2NJ-r0-IeD"/>
+                                            <constraint firstItem="iAY-dd-WM7" firstAttribute="leading" secondItem="CIg-HY-OI1" secondAttribute="leading" id="4Xi-uF-gog"/>
+                                            <constraint firstItem="Dwq-zT-8dj" firstAttribute="top" secondItem="3Mx-kI-d26" secondAttribute="bottom" constant="8" id="Ft9-Pg-eZN"/>
+                                            <constraint firstItem="iAY-dd-WM7" firstAttribute="leading" secondItem="CIg-HY-OI1" secondAttribute="leading" id="IIT-7o-fJh"/>
+                                            <constraint firstAttribute="centerX" secondItem="Dwq-zT-8dj" secondAttribute="centerX" id="ISm-Mr-KSy"/>
+                                            <constraint firstAttribute="trailing" secondItem="Dwq-zT-8dj" secondAttribute="trailing" id="PED-dt-wtZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="3Mx-kI-d26" secondAttribute="trailing" constant="8" id="fvJ-kk-19X"/>
+                                            <constraint firstItem="Dwq-zT-8dj" firstAttribute="leading" secondItem="CIg-HY-OI1" secondAttribute="leading" id="heO-h4-LJA"/>
+                                            <constraint firstAttribute="centerX" secondItem="3Mx-kI-d26" secondAttribute="centerX" id="joV-jA-I9w"/>
+                                            <constraint firstAttribute="trailing" secondItem="iAY-dd-WM7" secondAttribute="trailing" id="lN9-zL-cjR"/>
+                                            <constraint firstAttribute="trailing" secondItem="iAY-dd-WM7" secondAttribute="trailing" id="va5-rk-f1m"/>
+                                            <constraint firstItem="3Mx-kI-d26" firstAttribute="leading" secondItem="CIg-HY-OI1" secondAttribute="leading" constant="8" id="wdO-yH-dK8"/>
+                                            <constraint firstAttribute="bottom" secondItem="Dwq-zT-8dj" secondAttribute="bottom" id="xwK-iV-sI4"/>
+                                            <constraint firstItem="iAY-dd-WM7" firstAttribute="top" secondItem="CIg-HY-OI1" secondAttribute="top" id="yMO-Cv-aAp"/>
+                                            <constraint firstItem="3Mx-kI-d26" firstAttribute="top" secondItem="iAY-dd-WM7" secondAttribute="bottom" constant="8" id="zdo-LY-kAZ"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2NJ-r0-IeD"/>
+                                                <exclude reference="IIT-7o-fJh"/>
+                                                <exclude reference="lN9-zL-cjR"/>
+                                                <exclude reference="joV-jA-I9w"/>
+                                                <exclude reference="zdo-LY-kAZ"/>
+                                                <exclude reference="PED-dt-wtZ"/>
+                                                <exclude reference="heO-h4-LJA"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="075-L8-vd0">
+                                        <rect key="frame" x="212" y="0.0" width="128" height="97"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="second" translatesAutoresizingMaskIntoConstraints="NO" id="M85-K7-0P4">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZ9-QK-fuy">
+                                                <rect key="frame" x="43" y="76" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1S-hv-sS5">
+                                                <rect key="frame" x="8" y="38" width="112" height="30"/>
+                                                <state key="normal" title="Pump Ammount">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.69411766529999996" green="0.92549026010000002" blue="0.93333339689999995" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="cZ9-QK-fuy" firstAttribute="leading" secondItem="075-L8-vd0" secondAttribute="leading" id="LT7-7g-xii"/>
+                                            <constraint firstAttribute="trailing" secondItem="M85-K7-0P4" secondAttribute="trailing" id="LVo-23-Xlc"/>
+                                            <constraint firstAttribute="centerX" secondItem="cZ9-QK-fuy" secondAttribute="centerX" id="VVd-Om-2Pa"/>
+                                            <constraint firstAttribute="trailing" secondItem="M85-K7-0P4" secondAttribute="trailing" id="XVi-to-Lo4"/>
+                                            <constraint firstAttribute="centerX" secondItem="t1S-hv-sS5" secondAttribute="centerX" id="Xhl-t7-ate"/>
+                                            <constraint firstItem="t1S-hv-sS5" firstAttribute="leading" secondItem="075-L8-vd0" secondAttribute="leading" constant="8" id="buI-0x-wHN"/>
+                                            <constraint firstAttribute="trailing" secondItem="t1S-hv-sS5" secondAttribute="trailing" constant="8" id="gCP-9S-0jj"/>
+                                            <constraint firstItem="M85-K7-0P4" firstAttribute="top" secondItem="075-L8-vd0" secondAttribute="top" id="i2W-vp-4tO"/>
+                                            <constraint firstItem="t1S-hv-sS5" firstAttribute="top" secondItem="M85-K7-0P4" secondAttribute="bottom" constant="8" id="mRv-oj-2Tn"/>
+                                            <constraint firstAttribute="bottom" secondItem="cZ9-QK-fuy" secondAttribute="bottom" id="mVP-cK-e50"/>
+                                            <constraint firstItem="M85-K7-0P4" firstAttribute="leading" secondItem="075-L8-vd0" secondAttribute="leading" id="rQd-aK-qta"/>
+                                            <constraint firstAttribute="trailing" secondItem="cZ9-QK-fuy" secondAttribute="trailing" id="ucp-SK-4vm"/>
+                                            <constraint firstItem="M85-K7-0P4" firstAttribute="top" secondItem="075-L8-vd0" secondAttribute="top" id="ufn-0e-mbK"/>
+                                            <constraint firstItem="M85-K7-0P4" firstAttribute="leading" secondItem="075-L8-vd0" secondAttribute="leading" id="xtj-Sj-peZ"/>
+                                            <constraint firstItem="cZ9-QK-fuy" firstAttribute="top" secondItem="t1S-hv-sS5" secondAttribute="bottom" constant="8" id="yLR-w2-6Np"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="XVi-to-Lo4"/>
+                                                <exclude reference="rQd-aK-qta"/>
+                                                <exclude reference="ufn-0e-mbK"/>
+                                                <exclude reference="Xhl-t7-ate"/>
+                                                <exclude reference="mRv-oj-2Tn"/>
+                                                <exclude reference="LT7-7g-xii"/>
+                                                <exclude reference="ucp-SK-4vm"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="0RV-vI-qBE" secondAttribute="bottom" id="Jxq-SO-xWm"/>
+                                    <constraint firstItem="0RV-vI-qBE" firstAttribute="top" secondItem="ZX8-dM-Uha" secondAttribute="top" id="M86-40-ovS"/>
+                                    <constraint firstAttribute="bottom" secondItem="CIg-HY-OI1" secondAttribute="bottom" id="MtX-dy-8f2"/>
+                                    <constraint firstAttribute="trailing" secondItem="CIg-HY-OI1" secondAttribute="trailing" id="RXn-N8-cXq"/>
+                                    <constraint firstAttribute="centerX" secondItem="075-L8-vd0" secondAttribute="centerX" id="hei-e9-ec3"/>
+                                    <constraint firstItem="CIg-HY-OI1" firstAttribute="top" secondItem="ZX8-dM-Uha" secondAttribute="top" id="rf8-g0-dBE"/>
+                                    <constraint firstItem="075-L8-vd0" firstAttribute="top" secondItem="ZX8-dM-Uha" secondAttribute="top" id="uWw-tb-7Pd"/>
+                                    <constraint firstItem="0RV-vI-qBE" firstAttribute="leading" secondItem="ZX8-dM-Uha" secondAttribute="leading" id="y7e-Pv-JUe"/>
+                                    <constraint firstAttribute="bottom" secondItem="075-L8-vd0" secondAttribute="bottom" id="ysF-R0-jMF"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstAttribute="trailing" secondItem="ZX8-dM-Uha" secondAttribute="trailing" constant="24" id="DwG-iT-D6A"/>
+                            <constraint firstItem="ZX8-dM-Uha" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="24" id="EJA-2d-EHV"/>
+                            <constraint firstItem="ZX8-dM-Uha" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" constant="24" id="ouz-JC-46i"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Upgrades" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="pumpAmmountCostLabel" destination="cZ9-QK-fuy" id="GZd-T3-Fg5"/>
+                        <outlet property="pumpSpeedCostLabel" destination="dPd-CJ-zRG" id="OOA-1L-UU7"/>
+                        <outlet property="pumpStorageCostLabel" destination="Dwq-zT-8dj" id="onf-wq-ZyI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,6 +266,7 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="pump.GIF" width="66" height="178"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>

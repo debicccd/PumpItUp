@@ -14,6 +14,8 @@
 		0ABD01911A88C38C00362073 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ABD01901A88C38C00362073 /* Images.xcassets */; };
 		0ABD01941A88C38C00362073 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ABD01921A88C38C00362073 /* LaunchScreen.xib */; };
 		0ABD01A01A88C38C00362073 /* PumpItUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD019F1A88C38C00362073 /* PumpItUpTests.swift */; };
+		0ABD01AA1A88C57000362073 /* pump.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 0ABD01A91A88C57000362073 /* pump.GIF */; };
+		0ABD01AC1A88C98B00362073 /* PumpIncome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD01AB1A88C98B00362073 /* PumpIncome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		0ABD01991A88C38C00362073 /* PumpItUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PumpItUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ABD019E1A88C38C00362073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ABD019F1A88C38C00362073 /* PumpItUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PumpItUpTests.swift; sourceTree = "<group>"; };
+		0ABD01A91A88C57000362073 /* pump.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pump.GIF; sourceTree = "<group>"; };
+		0ABD01AB1A88C98B00362073 /* PumpIncome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PumpIncome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				0ABD01841A88C38B00362073 /* PumpItUp */,
-				0ABD019C1A88C38C00362073 /* PumpItUpTests */,
 				0ABD01831A88C38B00362073 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,6 +82,7 @@
 		0ABD01841A88C38B00362073 /* PumpItUp */ = {
 			isa = PBXGroup;
 			children = (
+				0ABD01AB1A88C98B00362073 /* PumpIncome.swift */,
 				0ABD01871A88C38C00362073 /* AppDelegate.swift */,
 				0ABD01891A88C38C00362073 /* FirstViewController.swift */,
 				0ABD018B1A88C38C00362073 /* SecondViewController.swift */,
@@ -86,6 +90,7 @@
 				0ABD01901A88C38C00362073 /* Images.xcassets */,
 				0ABD01921A88C38C00362073 /* LaunchScreen.xib */,
 				0ABD01851A88C38B00362073 /* Supporting Files */,
+				0ABD019C1A88C38C00362073 /* PumpItUpTests */,
 			);
 			path = PumpItUp;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 		0ABD01851A88C38B00362073 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0ABD01A91A88C57000362073 /* pump.GIF */,
 				0ABD01861A88C38C00362073 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -105,7 +111,7 @@
 				0ABD019D1A88C38C00362073 /* Supporting Files */,
 			);
 			path = PumpItUpTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		0ABD019D1A88C38C00362073 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -197,6 +203,7 @@
 			files = (
 				0ABD018F1A88C38C00362073 /* Main.storyboard in Resources */,
 				0ABD01941A88C38C00362073 /* LaunchScreen.xib in Resources */,
+				0ABD01AA1A88C57000362073 /* pump.GIF in Resources */,
 				0ABD01911A88C38C00362073 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ABD01AC1A88C98B00362073 /* PumpIncome.swift in Sources */,
 				0ABD018C1A88C38C00362073 /* SecondViewController.swift in Sources */,
 				0ABD01881A88C38C00362073 /* AppDelegate.swift in Sources */,
 				0ABD018A1A88C38C00362073 /* FirstViewController.swift in Sources */,
@@ -342,9 +350,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PumpItUp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PumpItUp/PumpItUp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -352,9 +365,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PumpItUp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PumpItUp/PumpItUp-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -411,6 +428,7 @@
 				0ABD01A51A88C38C00362073 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0ABD01A61A88C38C00362073 /* Build configuration list for PBXNativeTarget "PumpItUpTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +437,7 @@
 				0ABD01A81A88C38C00362073 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
