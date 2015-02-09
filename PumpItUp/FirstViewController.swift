@@ -31,7 +31,7 @@ class FirstViewController: UIViewController {
         let delegate = UIApplication.sharedApplication().delegate as AppDelegate
         delegate.pumpIncome = self.pumpIncome
         
-        self.pumpIncomeLabel.text = "Current Power Fluid: \(pumpIncome!)ml"
+        self.pumpIncomeLabel.text = "Current Power Fluid: \(pumpIncome!)ml/\(pumpIncome!.maxPowerFluidStorage)ml"
         
         timer = NSTimer.scheduledTimerWithTimeInterval(pumpIncome!.powerFluidRate, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         
@@ -43,6 +43,7 @@ class FirstViewController: UIViewController {
         let delegate = UIApplication.sharedApplication().delegate as AppDelegate
         self.pumpIncome = delegate.pumpIncome
         self.updateView()
+        self.updateTimer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,8 +60,9 @@ class FirstViewController: UIViewController {
     }
     
     func updateView(){
-        self.pumpRateLabel.text = "Pumping \(pumpIncome!.powerFluidAmmountString)ml per \(pumpIncome!.powerFluidRate) seconds"
-        self.pumpIncomeLabel.text = "Current Power Fluid: \(pumpIncome!)ml"
+        let pumpText = String(format: "Pumping \(pumpIncome!.powerFluidAmmountString)ml per %.2f seconds", self.pumpIncome!.powerFluidRate)
+        self.pumpRateLabel.text = pumpText
+        self.pumpIncomeLabel.text = "Current Power Fluid: \(pumpIncome!)ml/\(pumpIncome!.powerFluidStorageString)ml"
     }
     
     func savePumpIncome(){

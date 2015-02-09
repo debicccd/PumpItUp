@@ -15,9 +15,9 @@ let POWER_FLUID_AMMOUNT_KEY = "PowerFluidAmmount"
 
 class PumpIncome: NSObject, Printable, NSCoding{
     
-    var powerFluid = 0
+    var powerFluid = 1800
     var rateLevel = 0
-    var storageLevel = 10
+    var storageLevel = 0
     var ammountLevel = 0
     
     required convenience init(coder aDecoder: NSCoder) {
@@ -52,15 +52,85 @@ class PumpIncome: NSObject, Printable, NSCoding{
     }
     
     var maxPowerFluidStorage : Int{
-        return 1000 * (2^self.storageLevel)
+        return 1000 * (Int(exp(Double(self.storageLevel + 1))))
     }
     
     var powerFluidAmmount : Int{
-        return 10 * (2^self.ammountLevel)
+        return 10 * (Int(exp(Double(self.ammountLevel + 1))))
+    }
+    
+    var nextLevelPowerFluidRate : Double{
+        return 5.0 / Double(self.rateLevel + 2)
+    }
+    
+    var nextLevelMaxPowerFluidStorage : Int{
+        return 1000 * (Int(exp(Double(self.storageLevel + 2))))
+    }
+    
+    var nextLevelPowerFluidAmmount : Int{
+        return 10 * (Int(exp(Double(self.ammountLevel + 2))))
     }
     
     var powerFluidAmmountString : String{
         var returnString = powerFluidAmmount.description as NSString
+        let len = returnString.length
+        
+        if(len == 0){
+            return "0"
+        }
+        if(len == 1){
+            return "0.0" + returnString
+        }
+        if(len == 2){
+            return "0." + returnString
+        }
+        
+        returnString = returnString.substringWithRange(NSRange(location: 0, length: len-2)) + "." + returnString.substringWithRange(NSRange(location: len - 2, length: 2))
+        
+        return returnString
+    }
+    
+    var powerFluidStorageString : String{
+        var returnString = maxPowerFluidStorage.description as NSString
+        let len = returnString.length
+        
+        if(len == 0){
+            return "0"
+        }
+        if(len == 1){
+            return "0.0" + returnString
+        }
+        if(len == 2){
+            return "0." + returnString
+        }
+        
+        returnString = returnString.substringWithRange(NSRange(location: 0, length: len-2)) + "." + returnString.substringWithRange(NSRange(location: len - 2, length: 2))
+        
+        return returnString
+    }
+    
+    
+    var nextLevelPowerFluidAmmountString : String{
+        var returnString = nextLevelPowerFluidAmmount.description as NSString
+        let len = returnString.length
+        
+        if(len == 0){
+            return "0"
+        }
+        if(len == 1){
+            return "0.0" + returnString
+        }
+        if(len == 2){
+            return "0." + returnString
+        }
+        
+        returnString = returnString.substringWithRange(NSRange(location: 0, length: len-2)) + "." + returnString.substringWithRange(NSRange(location: len - 2, length: 2))
+        
+        return returnString
+    }
+    
+    var nextLevelMaxPowerFluidStorageString : String{
+        var returnString = nextLevelMaxPowerFluidStorage.description as NSString
         let len = returnString.length
         
         if(len == 0){
@@ -106,11 +176,11 @@ class PumpIncome: NSObject, Printable, NSCoding{
     }
     
     func subtractPowerFluid(ammount: Int){
-        self.powerFluid -= ammount
+        self.powerFluid -= ammount * 100
     }
     
     func canAfford(ammount: Int) -> Bool{
-        return self.powerFluid >= ammount
+        return self.powerFluid >= ammount * 100
     }
     
     func levelUpRateLevel(){
