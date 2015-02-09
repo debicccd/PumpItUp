@@ -12,7 +12,7 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBOutlet weak var repsTableView: UITableView!
     
-    var targetReps : [Int] = [20, 10, 20]
+    var targetReps : [Int] = [2, 1, 3]
     
     var completedReps : [Int] = [0, 0, 0]
     
@@ -41,7 +41,13 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell : UITableViewCell = repsTableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
         
-        cell.textLabel?.text = "\(targetReps[indexPath.row])"
+        if(targetReps[indexPath.row] <= completedReps[indexPath.row]){
+            cell.textLabel?.text = "\(targetReps[indexPath.row])\t(\(targetReps[indexPath.row]) completed)"
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        } else {
+            cell.textLabel?.text = "\(targetReps[indexPath.row])\t(\(completedReps[indexPath.row]) completed)"
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        }
         
         return cell
     }
@@ -79,6 +85,39 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
         
     }
 
+    @IBAction func doRep(sender: AnyObject) {
+        var i = 0
+        
+        while i < self.targetReps.count{
+            self.completedReps[i]++
+
+            self.repsTableView.reloadData()
+            
+            if self.targetReps[i] > self.completedReps[i]{
+                return
+            } else if self.targetReps[i] == self.completedReps[i]{
+                displayBreakDialog(i)
+                return
+            }
+            
+            i++
+        }
+    }
+    
+    func displayBreakDialog(set: Int){
+        var message = "Break Time!"
+        if set+1 == self.targetReps.count{
+            message = "You Finished All of the Reps!"
+        }
+        let alertController = UIAlertController(title: "Completed set \(set+1)", message: message, preferredStyle: .Alert)
+
+        let defaultAction = UIAlertAction(title: "Done", style: .Default) {
+            (action) -> Void in
+        }
+        alertController.addAction(defaultAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
     
     
 }
