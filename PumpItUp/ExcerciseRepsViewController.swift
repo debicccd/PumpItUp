@@ -8,7 +8,6 @@
 
 import UIKit
 import AudioToolbox
-import AVFoundation
 
 class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -69,6 +68,7 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
         alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
             textField.text = "\(self.targetReps[row])"
             textField.placeholder = "Number of Reps"
+            textField.keyboardType = UIKeyboardType.NumberPad
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) {
@@ -80,7 +80,9 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
             
             let reps = repsTextField.text.toInt()
             
-            self.targetReps[row] = reps!
+            if reps != nil {
+                self.targetReps[row] = reps!
+            }
             
             self.repsTableView.reloadData()
         }
