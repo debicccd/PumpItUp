@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -19,8 +20,13 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         repsTableView.layer.borderWidth = 2.0
+        
+        var gesture = UITapGestureRecognizer(target: self, action: "didDoubleClickTable")
+        gesture.numberOfTapsRequired = 2
+        
+        repsTableView.addGestureRecognizer(gesture)
 
         // Do any additional setup after loading the view.
     }
@@ -117,7 +123,28 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
         alertController.addAction(defaultAction)
         
         presentViewController(alertController, animated: true, completion: nil)
+        
+        playSound()
     }
     
+    func playSound(){
+        println("SOUND")
+        AudioServicesPlaySystemSound(1103)
+    }
     
+    @IBAction func pressedResetButton(sender: AnyObject) {
+        resetReps()
+    }
+    
+    func resetReps(){
+        self.targetReps = [5, 5, 5]
+        self.completedReps = [0, 0, 0]
+        self.repsTableView.reloadData()
+    }
+    
+    func didDoubleClickTable(){
+        self.targetReps.append(5)
+        self.completedReps.append(0)
+        self.repsTableView.reloadData()
+    }
 }

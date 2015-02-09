@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A01A0B01A8941750059BB5E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A01A0AF1A8941750059BB5E /* AudioToolbox.framework */; };
 		0ABD01881A88C38C00362073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD01871A88C38C00362073 /* AppDelegate.swift */; };
 		0ABD018A1A88C38C00362073 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD01891A88C38C00362073 /* FirstViewController.swift */; };
 		0ABD018C1A88C38C00362073 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD018B1A88C38C00362073 /* SecondViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A01A0AF1A8941750059BB5E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0ABD01821A88C38B00362073 /* PumpItUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PumpItUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ABD01861A88C38C00362073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ABD01871A88C38C00362073 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A01A0B01A8941750059BB5E /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +70,7 @@
 		0ABD01791A88C38B00362073 = {
 			isa = PBXGroup;
 			children = (
+				0A01A0AF1A8941750059BB5E /* AudioToolbox.framework */,
 				0ABD01841A88C38B00362073 /* PumpItUp */,
 				0ABD01831A88C38B00362073 /* Products */,
 			);

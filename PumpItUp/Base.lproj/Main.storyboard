@@ -103,9 +103,20 @@
                                     <action selector="doRep:" destination="Muq-sM-DnC" eventType="touchUpInside" id="S05-VT-osp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwv-yd-LAu">
+                                <rect key="frame" x="275" y="476" width="50" height="30"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedResetButton:" destination="Muq-sM-DnC" eventType="touchUpInside" id="g3Y-No-JPI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="nwv-yd-LAu" secondAttribute="centerX" id="1vH-Ab-EqW"/>
+                            <constraint firstItem="nwv-yd-LAu" firstAttribute="top" secondItem="O6z-qV-dDR" secondAttribute="bottom" constant="8" id="2U7-9I-eYd"/>
                             <constraint firstAttribute="centerX" secondItem="xXX-pG-XxH" secondAttribute="centerX" id="Cxc-pz-OKF"/>
                             <constraint firstAttribute="centerX" secondItem="O6z-qV-dDR" secondAttribute="centerX" id="Hoh-ZJ-K86"/>
                             <constraint firstItem="O6z-qV-dDR" firstAttribute="top" secondItem="xXX-pG-XxH" secondAttribute="bottom" constant="8" id="iwt-AV-cHh"/>
