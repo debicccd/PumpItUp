@@ -14,6 +14,7 @@ class FirstViewController: UIViewController {
 
     @IBOutlet weak var pumpRateLabel: UILabel!
     @IBOutlet weak var pumpIncomeLabel: UILabel!
+    @IBOutlet weak var pumpStorageProgressBar: UIProgressView!
     
     var backgroundQueue = NSOperationQueue()
     var pumpIncome : PumpIncome?
@@ -63,6 +64,7 @@ class FirstViewController: UIViewController {
         let pumpText = String(format: "Pumping \(pumpIncome!.powerFluidAmmountString)ml per %.2f seconds", self.pumpIncome!.powerFluidRate)
         self.pumpRateLabel.text = pumpText
         self.pumpIncomeLabel.text = "Current Power Fluid: \(pumpIncome!)ml/\(pumpIncome!.powerFluidStorageString)ml"
+        self.pumpStorageProgressBar.progress = Float(self.pumpIncome!.powerFluid) / Float(self.pumpIncome!.maxPowerFluidStorage)
     }
     
     func savePumpIncome(){

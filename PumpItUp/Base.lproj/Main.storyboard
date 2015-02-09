@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Pump-->
@@ -31,13 +32,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0jv-HS-fR7">
+                                <rect key="frame" x="169" y="426" width="262" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.086274512112140656" green="0.74117648601531982" blue="0.10196079313755035" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Bh2-6t-PXt" secondAttribute="centerX" id="399-ip-7d4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0jv-HS-fR7" secondAttribute="trailing" constant="153" id="KrS-jt-YSo"/>
                             <constraint firstAttribute="centerX" secondItem="qmb-sR-IEK" secondAttribute="centerX" id="TcP-dq-DTi"/>
+                            <constraint firstItem="0jv-HS-fR7" firstAttribute="top" secondItem="Bh2-6t-PXt" secondAttribute="bottom" constant="8" id="dKd-jm-VZC"/>
                             <constraint firstItem="Bh2-6t-PXt" firstAttribute="top" secondItem="qmb-sR-IEK" secondAttribute="bottom" constant="8" id="eaW-zC-gRe"/>
                             <constraint firstAttribute="centerX" secondItem="T9a-D3-1nd" secondAttribute="centerX" id="kFK-wO-fAI"/>
+                            <constraint firstItem="0jv-HS-fR7" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="153" id="oGJ-nh-FUE"/>
                             <constraint firstAttribute="centerY" secondItem="qmb-sR-IEK" secondAttribute="centerY" id="sp5-mQ-JRp"/>
                             <constraint firstItem="qmb-sR-IEK" firstAttribute="top" secondItem="T9a-D3-1nd" secondAttribute="bottom" constant="8" id="za6-de-GeI"/>
                         </constraints>
@@ -46,11 +54,61 @@
                     <connections>
                         <outlet property="pumpIncomeLabel" destination="Bh2-6t-PXt" id="P0b-Y3-Evs"/>
                         <outlet property="pumpRateLabel" destination="T9a-D3-1nd" id="QqD-bq-vBZ"/>
+                        <outlet property="pumpStorageProgressBar" destination="0jv-HS-fR7" id="tEO-FP-Alp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--Excercise-->
+        <scene sceneID="3tU-vi-cI2">
+            <objects>
+                <viewController id="Muq-sM-DnC" customClass="ExcerciseRepsViewController" customModule="PumpItUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pl7-fY-pjW"/>
+                        <viewControllerLayoutGuide type="bottom" id="cGR-BQ-hxu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="chn-Ak-Uhf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xXX-pG-XxH">
+                                <rect key="frame" x="170" y="169" width="260" height="261"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="9Ex-yo-Ttv"/>
+                                    <constraint firstAttribute="height" constant="261" id="CXr-ZY-Bxv"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="aFS-jY-eeT">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aFS-jY-eeT" id="cMJ-AZ-0wx">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Muq-sM-DnC" id="SHY-EG-Viq"/>
+                                    <outlet property="delegate" destination="Muq-sM-DnC" id="2Uc-lF-oOI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="xXX-pG-XxH" secondAttribute="centerX" id="Cxc-pz-OKF"/>
+                            <constraint firstAttribute="centerY" secondItem="xXX-pG-XxH" secondAttribute="centerY" id="zJM-Rt-AEO"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Excercise" image="first" id="oJz-HA-VS9"/>
+                    <connections>
+                        <outlet property="repsTableView" destination="xXX-pG-XxH" id="2X7-Uf-5iH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="phY-Iq-hhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="735" y="366"/>
         </scene>
         <!--Upgrades-->
         <scene sceneID="wg7-f3-ORb">
@@ -247,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="0.0" y="753"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -262,6 +320,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="Muq-sM-DnC" kind="relationship" relationship="viewControllers" id="U5c-ug-lLq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
