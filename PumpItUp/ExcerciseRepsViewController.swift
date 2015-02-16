@@ -8,6 +8,7 @@
 
 import UIKit
 import AudioToolbox
+import CoreMotion
 
 class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -16,6 +17,12 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
     var targetReps : [Int] = [2, 1, 3]
     
     var completedReps : [Int] = [0, 0, 0]
+    
+    var paused : Bool = false
+    
+    var initialAction : Bool = false
+    
+    var motionManager : CMMotionManager?
     
 
     override func viewDidLoad() {
@@ -27,8 +34,18 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
         gesture.numberOfTapsRequired = 2
         
         repsTableView.addGestureRecognizer(gesture)
-
-        // Do any additional setup after loading the view.
+        
+        motionManager = CMMotionManager()
+        
+        motionManager!.deviceMotionUpdateInterval = 0.2
+        
+        motionManager!.startDeviceMotionUpdatesUsingReferenceFrame(CMAttitudeReferenceFrameXArbitraryCorrectedZVertical)
+        
+        sleep(1)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("checkRep"), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,6 +110,44 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
         presentViewController(alertController, animated: true, completion: nil)
         
     }
+    
+    func checkRep(){
+        if paused{
+            return
+        }
+        
+        var accel = motionManager!.deviceMotion.userAcceleration
+        
+        let target = 0.3
+        
+        let orientation = UIApplication.sharedApplication().statusBarOrientation
+        
+        let horizontal = (orientation == .LandscapeLeft || orientation == .LandscapeRight) ? true : false
+        
+        if horizontal {
+            if initialAction {
+                if accel.x < -1 * target{
+                    doRep(self)
+                    initialAction = false
+                }
+            } else {
+                if accel.x > target {
+                    initialAction = true
+                }
+            }
+        } else {
+            if initialAction {
+                if accel.y > target {
+                    doRep(self)
+                    initialAction = false
+                }
+            } else {
+                if accel.y < -1 * target{
+                    initialAction = true
+                }
+            }
+        }
+    }
 
     @IBAction func doRep(sender: AnyObject) {
         var i = 0
@@ -115,6 +170,7 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func displayBreakDialog(set: Int){
+        self.paused = true
         var message = "Break Time!"
         if set+1 == self.targetReps.count{
             message = "You Finished All of the Reps!"
@@ -123,6 +179,7 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
 
         let defaultAction = UIAlertAction(title: "Done", style: .Default) {
             (action) -> Void in
+            self.paused = false
         }
         alertController.addAction(defaultAction)
         
