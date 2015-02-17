@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A00D9991A93BD2B000189AE /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A00D9981A93BD2B000189AE /* GoogleMaps.framework */; };
+		0A00D99B1A93BD49000189AE /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0A00D99A1A93BD49000189AE /* GoogleMaps.bundle */; };
+		0A00D99D1A93BD6E000189AE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A00D99C1A93BD6E000189AE /* AVFoundation.framework */; };
+		0A00D99F1A93BD73000189AE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A00D99E1A93BD73000189AE /* CoreData.framework */; };
+		0A00D9A11A93BD78000189AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A00D9A01A93BD78000189AE /* CoreLocation.framework */; };
+		0A00D9A31A93BD7D000189AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A00D9A21A93BD7D000189AE /* CoreText.framework */; };
+		0A00D9A51A93BD83000189AE /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A00D9A41A93BD83000189AE /* GLKit.framework */; };
+		0A00D9A71A93BD88000189AE /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A00D9A61A93BD88000189AE /* ImageIO.framework */; };
+		0A00D9A91A93BD8F000189AE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A00D9A81A93BD8F000189AE /* libc++.dylib */; };
+		0A00D9AB1A93BD96000189AE /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A00D9AA1A93BD96000189AE /* libicucore.dylib */; };
+		0A00D9AD1A93BD9E000189AE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A00D9AC1A93BD9E000189AE /* libz.dylib */; };
+		0A00D9AF1A93BDA4000189AE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A00D9AE1A93BDA4000189AE /* OpenGLES.framework */; };
+		0A00D9B11A93BDA9000189AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A00D9B01A93BDA9000189AE /* QuartzCore.framework */; };
+		0A00D9B31A93BDAE000189AE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A00D9B21A93BDAE000189AE /* SystemConfiguration.framework */; };
+		0A00D9B81A93BF67000189AE /* RunningMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A00D9B71A93BF67000189AE /* RunningMapViewController.swift */; };
 		0A01A0B01A8941750059BB5E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A01A0AF1A8941750059BB5E /* AudioToolbox.framework */; };
 		0A0BA4321A8950C100BBC81A /* beep-03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A0BA4311A8950C100BBC81A /* beep-03.wav */; };
 		0ABD01881A88C38C00362073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD01871A88C38C00362073 /* AppDelegate.swift */; };
@@ -32,6 +47,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A00D9981A93BD2B000189AE /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		0A00D99A1A93BD49000189AE /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		0A00D99C1A93BD6E000189AE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0A00D99E1A93BD73000189AE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0A00D9A01A93BD78000189AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0A00D9A21A93BD7D000189AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		0A00D9A41A93BD83000189AE /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		0A00D9A61A93BD88000189AE /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		0A00D9A81A93BD8F000189AE /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		0A00D9AA1A93BD96000189AE /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		0A00D9AC1A93BD9E000189AE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0A00D9AE1A93BDA4000189AE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		0A00D9B01A93BDA9000189AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0A00D9B21A93BDAE000189AE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0A00D9B41A93BDD4000189AE /* PumpItUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PumpItUp-Bridging-Header.h"; sourceTree = "<group>"; };
+		0A00D9B71A93BF67000189AE /* RunningMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningMapViewController.swift; sourceTree = "<group>"; };
 		0A01A0AF1A8941750059BB5E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0A0BA4311A8950C100BBC81A /* beep-03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-03.wav"; sourceTree = "<group>"; };
 		0ABD01821A88C38B00362073 /* PumpItUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PumpItUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +86,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A00D9B31A93BDAE000189AE /* SystemConfiguration.framework in Frameworks */,
+				0A00D9B11A93BDA9000189AE /* QuartzCore.framework in Frameworks */,
+				0A00D9AF1A93BDA4000189AE /* OpenGLES.framework in Frameworks */,
+				0A00D9AD1A93BD9E000189AE /* libz.dylib in Frameworks */,
+				0A00D9AB1A93BD96000189AE /* libicucore.dylib in Frameworks */,
+				0A00D9A91A93BD8F000189AE /* libc++.dylib in Frameworks */,
+				0A00D9A71A93BD88000189AE /* ImageIO.framework in Frameworks */,
+				0A00D9A51A93BD83000189AE /* GLKit.framework in Frameworks */,
+				0A00D9A31A93BD7D000189AE /* CoreText.framework in Frameworks */,
+				0A00D9A11A93BD78000189AE /* CoreLocation.framework in Frameworks */,
+				0A00D99F1A93BD73000189AE /* CoreData.framework in Frameworks */,
+				0A00D99D1A93BD6E000189AE /* AVFoundation.framework in Frameworks */,
+				0A00D9991A93BD2B000189AE /* GoogleMaps.framework in Frameworks */,
 				0A01A0B01A8941750059BB5E /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +116,20 @@
 		0ABD01791A88C38B00362073 = {
 			isa = PBXGroup;
 			children = (
+				0A00D9B21A93BDAE000189AE /* SystemConfiguration.framework */,
+				0A00D9B01A93BDA9000189AE /* QuartzCore.framework */,
+				0A00D9AE1A93BDA4000189AE /* OpenGLES.framework */,
+				0A00D9AC1A93BD9E000189AE /* libz.dylib */,
+				0A00D9AA1A93BD96000189AE /* libicucore.dylib */,
+				0A00D9A81A93BD8F000189AE /* libc++.dylib */,
+				0A00D9A61A93BD88000189AE /* ImageIO.framework */,
+				0A00D9A41A93BD83000189AE /* GLKit.framework */,
+				0A00D9A21A93BD7D000189AE /* CoreText.framework */,
+				0A00D9A01A93BD78000189AE /* CoreLocation.framework */,
+				0A00D99E1A93BD73000189AE /* CoreData.framework */,
+				0A00D99C1A93BD6E000189AE /* AVFoundation.framework */,
+				0A00D99A1A93BD49000189AE /* GoogleMaps.bundle */,
+				0A00D9981A93BD2B000189AE /* GoogleMaps.framework */,
 				0A01A0AF1A8941750059BB5E /* AudioToolbox.framework */,
 				0ABD01841A88C38B00362073 /* PumpItUp */,
 				0ABD01831A88C38B00362073 /* Products */,
@@ -95,11 +153,13 @@
 				0ABD01891A88C38C00362073 /* FirstViewController.swift */,
 				0ABD018B1A88C38C00362073 /* SecondViewController.swift */,
 				0AFB3EBC1A89287F008BF1BD /* ExcerciseRepsViewController.swift */,
+				0A00D9B71A93BF67000189AE /* RunningMapViewController.swift */,
 				0ABD018D1A88C38C00362073 /* Main.storyboard */,
 				0ABD01901A88C38C00362073 /* Images.xcassets */,
 				0ABD01921A88C38C00362073 /* LaunchScreen.xib */,
 				0ABD01851A88C38B00362073 /* Supporting Files */,
 				0ABD019C1A88C38C00362073 /* PumpItUpTests */,
+				0A00D9B41A93BDD4000189AE /* PumpItUp-Bridging-Header.h */,
 			);
 			path = PumpItUp;
 			sourceTree = "<group>";
@@ -214,6 +274,7 @@
 				0ABD018F1A88C38C00362073 /* Main.storyboard in Resources */,
 				0ABD01941A88C38C00362073 /* LaunchScreen.xib in Resources */,
 				0ABD01AA1A88C57000362073 /* pump.GIF in Resources */,
+				0A00D99B1A93BD49000189AE /* GoogleMaps.bundle in Resources */,
 				0A0BA4321A8950C100BBC81A /* beep-03.wav in Resources */,
 				0ABD01911A88C38C00362073 /* Images.xcassets in Resources */,
 			);
@@ -236,6 +297,7 @@
 				0ABD01AC1A88C98B00362073 /* PumpIncome.swift in Sources */,
 				0ABD018C1A88C38C00362073 /* SecondViewController.swift in Sources */,
 				0ABD01881A88C38C00362073 /* AppDelegate.swift in Sources */,
+				0A00D9B81A93BF67000189AE /* RunningMapViewController.swift in Sources */,
 				0AFB3EBD1A89287F008BF1BD /* ExcerciseRepsViewController.swift in Sources */,
 				0ABD018A1A88C38C00362073 /* FirstViewController.swift in Sources */,
 			);
@@ -318,6 +380,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -357,6 +420,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -370,11 +434,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PumpItUp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "PumpItUp/PumpItUp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -385,11 +454,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PumpItUp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "PumpItUp/PumpItUp-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -132,6 +132,25 @@
             </objects>
             <point key="canvasLocation" x="735" y="366"/>
         </scene>
+        <!--Running-->
+        <scene sceneID="I4A-4k-gqm">
+            <objects>
+                <viewController id="3KS-1E-yzd" customClass="RunningMapViewController" customModule="PumpItUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wRk-i6-Go7"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Kv-H7-N5K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cyY-Jn-NO9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Running" image="second" id="nT6-AF-6Vy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tJd-5c-5Fk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-684" y="753"/>
+        </scene>
         <!--Upgrades-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -339,6 +358,7 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="Muq-sM-DnC" kind="relationship" relationship="viewControllers" id="U5c-ug-lLq"/>
+                        <segue destination="3KS-1E-yzd" kind="relationship" relationship="viewControllers" id="O1B-sM-sya"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

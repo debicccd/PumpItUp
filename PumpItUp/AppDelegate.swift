@@ -10,6 +10,8 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
+    
+    let API_KEY = "AIzaSyCu_Z7jYoAvvTYGyFvWHsdMwpU00sgofWk"
 
     var window: UIWindow?
 
@@ -17,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        GMSServices.provideAPIKey(API_KEY)
         return true
     }
 

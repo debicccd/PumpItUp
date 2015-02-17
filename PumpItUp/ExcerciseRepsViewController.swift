@@ -37,14 +37,14 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
         
         motionManager = CMMotionManager()
         
-        motionManager!.deviceMotionUpdateInterval = 0.2
-        
         motionManager!.startDeviceMotionUpdatesUsingReferenceFrame(CMAttitudeReferenceFrameXArbitraryCorrectedZVertical)
         
-        sleep(1)
+        motionManager!.deviceMotionUpdateInterval = 0.2
     }
     
     override func viewDidAppear(animated: Bool) {
+        sleep(1)
+        
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("checkRep"), userInfo: nil, repeats: true)
     }
 
@@ -115,6 +115,7 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
         if paused{
             return
         }
+        
         
         var accel = motionManager!.deviceMotion.userAcceleration
         
