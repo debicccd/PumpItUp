@@ -143,9 +143,33 @@
                     <view key="view" contentMode="scaleToFill" id="cyY-Jn-NO9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhL-Z6-xYv" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="20" width="600" height="494"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J73-Xm-tjf">
+                                <rect key="frame" x="279" y="522" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="J73-Xm-tjf" secondAttribute="centerX" id="N3K-jh-qqx"/>
+                            <constraint firstItem="yhL-Z6-xYv" firstAttribute="leading" secondItem="cyY-Jn-NO9" secondAttribute="leading" id="OOf-u3-hLH"/>
+                            <constraint firstAttribute="trailing" secondItem="yhL-Z6-xYv" secondAttribute="trailing" id="Pmz-OM-FUg"/>
+                            <constraint firstItem="J73-Xm-tjf" firstAttribute="top" secondItem="yhL-Z6-xYv" secondAttribute="bottom" constant="8" id="h2r-UZ-QyX"/>
+                            <constraint firstItem="yhL-Z6-xYv" firstAttribute="top" secondItem="wRk-i6-Go7" secondAttribute="bottom" id="l5R-gQ-HUg"/>
+                            <constraint firstItem="9Kv-H7-N5K" firstAttribute="top" secondItem="J73-Xm-tjf" secondAttribute="bottom" constant="8" id="qli-Ws-csb"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Running" image="second" id="nT6-AF-6Vy"/>
+                    <connections>
+                        <outlet property="mapLabel" destination="J73-Xm-tjf" id="kFY-jo-Rxe"/>
+                        <outlet property="newMapView" destination="yhL-Z6-xYv" id="YiH-dY-acX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJd-5c-5Fk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

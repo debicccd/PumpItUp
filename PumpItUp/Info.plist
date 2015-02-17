@@ -26,6 +26,19 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+    
+    <key>NSLocationUsageDescription</key>
+    <string>Please allow location tracking to use this feature</string>
+    
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Please allow location tracking to use this feature</string>
+    
+    <key>NSLocationWhenInUsageDescription</key>
+    <string>Please allow location tracking to use this feature</string>
+    
+    
+    
+    
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
