@@ -20,14 +20,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pump.GIF" translatesAutoresizingMaskIntoConstraints="NO" id="qmb-sR-IEK">
                                 <rect key="frame" x="267" y="211" width="66" height="178"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bh2-6t-PXt">
-                                <rect key="frame" x="279" y="397" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fluid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bh2-6t-PXt">
+                                <rect key="frame" x="281" y="397" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9a-D3-1nd">
-                                <rect key="frame" x="279" y="182" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9a-D3-1nd">
+                                <rect key="frame" x="282" y="182" width="36" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -35,6 +35,12 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0jv-HS-fR7">
                                 <rect key="frame" x="169" y="426" width="262" height="2"/>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Js-XN-TQx">
+                                <rect key="frame" x="269" y="460" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.086274512112140656" green="0.74117648601531982" blue="0.10196079313755035" alpha="1" colorSpace="deviceRGB"/>
@@ -44,6 +50,8 @@
                             <constraint firstAttribute="centerX" secondItem="qmb-sR-IEK" secondAttribute="centerX" id="TcP-dq-DTi"/>
                             <constraint firstItem="0jv-HS-fR7" firstAttribute="top" secondItem="Bh2-6t-PXt" secondAttribute="bottom" constant="8" id="dKd-jm-VZC"/>
                             <constraint firstItem="Bh2-6t-PXt" firstAttribute="top" secondItem="qmb-sR-IEK" secondAttribute="bottom" constant="8" id="eaW-zC-gRe"/>
+                            <constraint firstItem="7Js-XN-TQx" firstAttribute="top" secondItem="0jv-HS-fR7" secondAttribute="bottom" constant="32" id="f2d-kG-hSx"/>
+                            <constraint firstAttribute="centerX" secondItem="7Js-XN-TQx" secondAttribute="centerX" id="fzP-4Q-PLo"/>
                             <constraint firstAttribute="centerX" secondItem="T9a-D3-1nd" secondAttribute="centerX" id="kFK-wO-fAI"/>
                             <constraint firstItem="0jv-HS-fR7" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="153" id="oGJ-nh-FUE"/>
                             <constraint firstAttribute="centerY" secondItem="qmb-sR-IEK" secondAttribute="centerY" id="sp5-mQ-JRp"/>
@@ -52,6 +60,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="View Pump" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="caloriesLabel" destination="7Js-XN-TQx" id="0GT-Mp-RDz"/>
                         <outlet property="pumpIncomeLabel" destination="Bh2-6t-PXt" id="P0b-Y3-Evs"/>
                         <outlet property="pumpRateLabel" destination="T9a-D3-1nd" id="QqD-bq-vBZ"/>
                         <outlet property="pumpStorageProgressBar" destination="0jv-HS-fR7" id="tEO-FP-Alp"/>
@@ -145,21 +154,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhL-Z6-xYv" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="20" width="600" height="494"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="489"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J73-Xm-tjf">
-                                <rect key="frame" x="279" y="522" width="42" height="21"/>
+                                <rect key="frame" x="279" y="517" width="42" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUf-1L-Tow">
+                                <rect key="frame" x="353" y="517" width="109" height="30"/>
+                                <state key="normal" title="Collect Calories">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="collectCalories:" destination="3KS-1E-yzd" eventType="touchUpInside" id="j2G-ir-AhW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="9Kv-H7-N5K" firstAttribute="top" secondItem="PUf-1L-Tow" secondAttribute="bottom" constant="4" id="C9b-Sj-5zF"/>
+                            <constraint firstItem="PUf-1L-Tow" firstAttribute="leading" secondItem="J73-Xm-tjf" secondAttribute="trailing" constant="32" id="IAI-YY-mcf"/>
                             <constraint firstAttribute="centerX" secondItem="J73-Xm-tjf" secondAttribute="centerX" id="N3K-jh-qqx"/>
                             <constraint firstItem="yhL-Z6-xYv" firstAttribute="leading" secondItem="cyY-Jn-NO9" secondAttribute="leading" id="OOf-u3-hLH"/>
                             <constraint firstAttribute="trailing" secondItem="yhL-Z6-xYv" secondAttribute="trailing" id="Pmz-OM-FUg"/>
+                            <constraint firstItem="PUf-1L-Tow" firstAttribute="top" secondItem="yhL-Z6-xYv" secondAttribute="bottom" constant="8" id="PwA-6d-zIv"/>
                             <constraint firstItem="J73-Xm-tjf" firstAttribute="top" secondItem="yhL-Z6-xYv" secondAttribute="bottom" constant="8" id="h2r-UZ-QyX"/>
                             <constraint firstItem="yhL-Z6-xYv" firstAttribute="top" secondItem="wRk-i6-Go7" secondAttribute="bottom" id="l5R-gQ-HUg"/>
                             <constraint firstItem="9Kv-H7-N5K" firstAttribute="top" secondItem="J73-Xm-tjf" secondAttribute="bottom" constant="8" id="qli-Ws-csb"/>

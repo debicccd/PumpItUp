@@ -9,12 +9,15 @@
 import UIKit
 
 let UserDefaultsPumpIncomeKey = "PumpIncome"
+let UserDefaultsCaloriesKey = "Calories"
 
 class FirstViewController: UIViewController {
 
     @IBOutlet weak var pumpRateLabel: UILabel!
     @IBOutlet weak var pumpIncomeLabel: UILabel!
     @IBOutlet weak var pumpStorageProgressBar: UIProgressView!
+    
+    @IBOutlet weak var caloriesLabel: UILabel!
     
     var backgroundQueue = NSOperationQueue()
     var pumpIncome : PumpIncome?
@@ -65,6 +68,7 @@ class FirstViewController: UIViewController {
         self.pumpRateLabel.text = pumpText
         self.pumpIncomeLabel.text = "Current Power Fluid: \(pumpIncome!)ml/\(pumpIncome!.powerFluidStorageString)ml"
         self.pumpStorageProgressBar.progress = Float(self.pumpIncome!.powerFluid) / Float(self.pumpIncome!.maxPowerFluidStorage)
+        self.caloriesLabel.text = "\(getCalories()) Calories"
     }
     
     func savePumpIncome(){
@@ -82,6 +86,33 @@ class FirstViewController: UIViewController {
         timer = nil
         
         timer = NSTimer.scheduledTimerWithTimeInterval(pumpIncome!.powerFluidRate, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+    }
+    
+    func getCalories() -> Int {
+        if let cals = NSUserDefaults.standardUserDefaults().integerForKey(UserDefaultsCaloriesKey) as Int? {
+            return cals
+        } else {
+            return 0
+        }
+    }
+    
+    func changeCalories(ammount: Int) {
+        var newCals = ammount
+        if let cals = NSUserDefaults.standardUserDefaults().integerForKey(UserDefaultsCaloriesKey) as Int? {
+            newCals += cals
+        }
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(newCals, forKey: UserDefaultsCaloriesKey)
+        defaults.synchronize()
+    }
+    
+    func canAfford(ammount: Int) -> Bool {
+        if let cals = NSUserDefaults.standardUserDefaults().integerForKey(UserDefaultsCaloriesKey) as Int? {
+            return cals >= ammount
+        } else {
+            return false
+        }
     }
 }
 

@@ -22,7 +22,7 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
     
     var initialAction : Bool = false
     
-    var motionManager : CMMotionManager?
+    var motionManager = CMMotionManager()
     
 
     override func viewDidLoad() {
@@ -35,11 +35,9 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
         
         repsTableView.addGestureRecognizer(gesture)
         
-        motionManager = CMMotionManager()
+        motionManager.startDeviceMotionUpdatesUsingReferenceFrame(CMAttitudeReferenceFrameXArbitraryCorrectedZVertical)
         
-        motionManager!.startDeviceMotionUpdatesUsingReferenceFrame(CMAttitudeReferenceFrameXArbitraryCorrectedZVertical)
-        
-        motionManager!.deviceMotionUpdateInterval = 0.2
+        motionManager.deviceMotionUpdateInterval = 0.2
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -116,8 +114,11 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
             return
         }
         
+        if(!motionManager.deviceMotionAvailable){
+            return
+        }
         
-        var accel = motionManager!.deviceMotion.userAcceleration
+        var accel = motionManager.deviceMotion.userAcceleration
         
         let target = 0.3
         

@@ -21,6 +21,8 @@ class RunningMapViewController: UIViewController, CLLocationManagerDelegate{
     var lats : [Double] = []
     var longs : [Double] = []
     
+    var cals : Int = 0
+    
     var initial = true
         
     override func viewDidLoad() {
@@ -37,6 +39,8 @@ class RunningMapViewController: UIViewController, CLLocationManagerDelegate{
         locationManager.requestAlwaysAuthorization()
         
         self.locationManager.startUpdatingLocation()
+        
+        self.mapLabel.text = "0 Calories Earned (\(getCalories()) saved up)"
     }
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -62,7 +66,7 @@ class RunningMapViewController: UIViewController, CLLocationManagerDelegate{
             
             let distance = newLoc.distanceFromLocation(previousLoc)
             
-            if distance > 10.0 {
+            if distance > 5 {
                 self.lats.append(lat)
                 self.longs.append(long)
                 updateTrack()
@@ -100,6 +104,46 @@ class RunningMapViewController: UIViewController, CLLocationManagerDelegate{
         let pathLine = GMSPolyline(path: path)
         pathLine.map = newMapView
         
-        mapLabel.text = "\(distance)"
+        mapLabel.text = "\(Int(distance)) Calories Earned (\(getCalories()) saved up)"
+        
+        cals = Int(distance)
+    }
+    
+    @IBAction func collectCalories(sender: AnyObject) {
+        changeCalories(cals)
+        
+        cals = 0
+        
+        lats = []
+        longs = []
+        
+        self.mapLabel.text = "0 Calories Earned (\(getCalories()) saved up)"
+    }
+    
+    func getCalories() -> Int {
+        if let cals = NSUserDefaults.standardUserDefaults().integerForKey(UserDefaultsCaloriesKey) as Int? {
+            return cals
+        } else {
+            return 0
+        }
+    }
+    
+    func changeCalories(ammount: Int) {
+        var newCals = ammount
+        if let cals = NSUserDefaults.standardUserDefaults().integerForKey(UserDefaultsCaloriesKey) as Int? {
+            newCals += cals
+        }
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(newCals, forKey: UserDefaultsCaloriesKey)
+        defaults.synchronize()
+    }
+    
+    func canAfford(ammount: Int) -> Bool {
+        if let cals = NSUserDefaults.standardUserDefaults().integerForKey(UserDefaultsCaloriesKey) as Int? {
+            return cals >= ammount
+        } else {
+            return false
+        }
     }
 }
