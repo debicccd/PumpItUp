@@ -175,7 +175,17 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
         self.paused = true
         var message = "Break Time!"
         if set+1 == self.targetReps.count{
-            message = "You Finished All of the Reps!"
+            var reps = 0
+            
+            for num in completedReps {
+                reps += num
+            }
+            
+            let cals = reps * 10
+            
+            message = "You Finished All of the Reps!\n You earned \(cals) Calories!"
+            
+            changeCalories(cals)
         }
         let alertController = UIAlertController(title: "Completed set \(set+1)", message: message, preferredStyle: .Alert)
 
@@ -211,5 +221,32 @@ class ExcerciseRepsViewController: UIViewController, UITableViewDataSource, UITa
         self.targetReps.append(5)
         self.completedReps.append(0)
         self.repsTableView.reloadData()
+    }
+    
+    func getCalories() -> Int {
+        if let cals = NSUserDefaults.standardUserDefaults().integerForKey(UserDefaultsCaloriesKey) as Int? {
+            return cals
+        } else {
+            return 0
+        }
+    }
+    
+    func changeCalories(ammount: Int) {
+        var newCals = ammount
+        if let cals = NSUserDefaults.standardUserDefaults().integerForKey(UserDefaultsCaloriesKey) as Int? {
+            newCals += cals
+        }
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(newCals, forKey: UserDefaultsCaloriesKey)
+        defaults.synchronize()
+    }
+    
+    func canAfford(ammount: Int) -> Bool {
+        if let cals = NSUserDefaults.standardUserDefaults().integerForKey(UserDefaultsCaloriesKey) as Int? {
+            return cals >= ammount
+        } else {
+            return false
+        }
     }
 }

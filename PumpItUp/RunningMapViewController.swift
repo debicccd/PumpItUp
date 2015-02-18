@@ -110,6 +110,8 @@ class RunningMapViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     @IBAction func collectCalories(sender: AnyObject) {
+        newMapView.clear()
+        
         changeCalories(cals)
         
         cals = 0
